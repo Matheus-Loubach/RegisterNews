@@ -1,0 +1,311 @@
+*
+    padding: 0
+    margin: 0
+
+:root
+  /* Colors */
+--gray1: #7C7C7C
+--gray2: #F7F7F7
+--gray3: #DDDDDD
+--light-blue: #2A92D3
+--deep-blue: #213C4D
+--black: #0f0f0f
+--close: #ff0707
+
+/* Header */
+
+.top-bar
+    display: flex
+    justify-content: space-between
+    background: var(---deep-blue)
+    padding: 18px
+    width: 100%
+    color: var(--gray3)
+    font-family: 'Roboto', sans-serif
+
+.container li
+    margin: 0 10px /* Espaçamento entre os itens */
+
+.menuMobile li a
+    text-decoration: none
+    color: var(--gray2)
+
+.menuMobile li
+    margin: 5px 10px
+    padding: 10px
+    display: inline-block
+
+.menuMobile li:hover
+    background-color: var(--black)
+
+.container_mobile
+    padding: 10px
+
+.container_mobile button
+    padding: 5px
+    border-radius: 10px
+
+.container_mobile
+    margin-top: -40px
+
+/* Troca de Menu */
+@media (max-width: 768px)
+.menuMobile
+    display: block
+
+.menuPc, .main-menu
+    display: none
+
+.logo
+    display: none
+
+@media (min-width: 769px)
+.menuMobile
+    display: none
+
+.menuPc
+    display: block
+
+/* Menu Mobile */
+.main-menu.active
+    padding-top: 10%
+    position: fixed
+    z-index: 1
+    left: -100%
+    top: 0
+    width: 50%
+    height: 50%
+    overflow: auto
+    background-color: rgba(0, 0, 0, 0.678)
+    border-bottom-right-radius: 10px
+    animation-name: slideIn
+    animation-duration: 0.5s
+    animation-fill-mode: forwards
+
+.menuPc ul
+    display: flex
+
+.menuPc ul li
+    margin-right: 10px
+    list-style-type: none
+
+.menuPc ul li a
+    text-decoration: none
+    color: var(--wpdevs-gray3)
+    padding: 10px
+
+.menuPc ul li a:hover
+    border-bottom: 2px solid var(--light-blue)
+    padding: 10px
+    color: var(--wpdevs-gray3)
+
+:is(.logo a, .logoMobile a)
+    color: #DDDDDD
+    text-transform: uppercase
+    text-decoration: none
+
+@keyframes slideIn
+    0%
+        left: -100%
+
+    100%
+        left: 0
+
+.menu-icon,
+.check-button
+    cursor: pointer
+    background-color: transparent
+    border: none
+
+.menu-icon .bar1,
+.menu-icon .bar2,
+.menu-icon .bar3
+    width: 28px
+    height: 3px
+    background-color: var(--gray3)
+    margin: 5px 0
+    transition: 0.4s
+
+.top-bar input[type="text"]
+    color: var(--black)
+    padding: 10px 20px
+    border: none
+    border-radius: 4px
+    cursor: pointer
+
+/* index main */
+
+.more-info-btn
+    margin-top: 20px
+
+.grid-container
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    justify-content: center
+    margin: 5% 0 3% 0
+
+@media (max-width: 768px)
+.grid-container
+    grid-template-columns: repeat(2, 1fr)
+
+@media (max-width: 480px)
+.grid-container
+    grid-template-columns: 1fr
+
+.container_main
+    margin: 10px 0 35px 0
+    padding-bottom: 30px
+
+.container_main a
+    color: var(--black)
+    text-decoration: none
+
+.container_main a:hover
+    color: var(--light-blue)
+
+.grid-item
+    background-color: var(--gray3)
+    padding: 20px
+    border-radius: 5px
+    width: 350px
+    height: 300px
+    margin: auto
+    text-align: center
+
+@media (max-width: 768px)
+    padding: 10px
+    max-width: 300px
+
+.grid-item h2
+    margin-bottom: 3%
+
+.grid-item p
+    margin-top: 3%
+    width: 100%
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
+    font-family: Arial, Helvetica, sans-serif
+    font-weight: normal
+    display: -webkit-box
+    -webkit-line-clamp: 3 /* Define o número máximo de linhas */
+    -webkit-box-orient: vertical
+
+.grid-item button
+    padding: 10px
+    background-color: var(---deep-blue)
+    color: var(--gray2)
+    border: none
+
+.grid-item button:hover
+    transition: .3s ease-in-out
+    cursor: pointer
+    border-radius: 15px
+
+.modal
+    display: none
+    position: fixed
+    z-index: 2
+    left: 0
+    top: -100px
+    width: 100%
+    height: 100%
+    background-color: var(--black)
+
+@media (max-width: 768px)
+    top: 0
+
+.modal-content
+    background-color: var(--gray3)
+    margin: 15% auto
+    padding: 20px
+    max-width: 500px
+    max-height: 500px
+    overflow: scroll
+    border-radius: 5px
+
+@media (max-width: 768px)
+    max-width: 300px
+    margin: 5% 0 0 10%
+    padding: 10px
+
+.modal-content h2
+    text-align: center
+
+.modal-content p
+    margin-top: 10px
+    padding: 10px
+    text-align: start
+
+.modal-content button
+    padding: 10px
+    border: 1px solid var(--black)
+
+.modal-content button:hover
+    padding: 10px
+    background-color: var(--close)
+    cursor: pointer
+
+/* Adicionar Noticias */
+
+.container_cadaster
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-top: 5%
+
+.container_cadas
+    max-width: 500px
+    width: 100%
+    padding: 20px
+    background: var(--gray3)
+    border-radius: 5px
+
+.container_cadas label
+    display: block
+    margin-bottom: 5px
+
+.container_cadas input[type="text"],
+.container_cadas textarea,
+.container_cadas select
+    width: 100%
+    padding: 8px
+    margin-bottom: 10px
+    border: 1px solid #ccc
+    border-radius: 4px
+    box-sizing: border-box
+
+.container_cadas input[type="submit"]
+    background-color: #4CAF50
+    color: white
+    padding: 10px 20px
+    border: none
+    border-radius: 4px
+    cursor: pointer
+
+.container_cadas input[type="submit"]:hover
+    background-color: var(--)
+
+@media (max-width: 600px)
+.container_cadas
+    max-width: 100%
+
+/* Footer */
+
+footer
+    position: fixed
+    left: 0
+    bottom: 0
+    width: 100%
+    color: var(--gray3)
+    background: var(--deep-blue)
+    padding: 20px
+    text-align: center
+    margin-left: -30px;
+    
+.copyright a
+    color: var(--gray3)
+    text-decoration: none
+
+.copyright a:hover
+    color: var(--light-blue)
